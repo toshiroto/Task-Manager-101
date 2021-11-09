@@ -1,0 +1,17 @@
+<div class="container">
+<h1>My Tasks</h1>
+<ul>
+<% @tasks.each do |task| %>
+<li><input <% if task.completed? %>
+checked
+<% else  %>
+unchecked
+<% end %>
+type="checkbox"> <%= link_to task.title, task_path(task) %>
+<i class="fa-solid fa-trash-can"></i></li>
+<% end %>
+</ul>
+<br>
+<p><%= link_to "Create new task", "tasks/new" %></p>
+
+</div>
